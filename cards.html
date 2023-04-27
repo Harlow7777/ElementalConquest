@@ -1,273 +1,438 @@
- <!DOCTYPE html>
- <html>
-   <head>
-     <title>Card Compendium</title>
-     <script src="js/navigation.js"></script>
-     <link rel="stylesheet" href="css/styles.css">
-     <style>
-      /* Styles for card compendium page */
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-image: url("images/compendium-background.png");
-        filter: brightness(25%) contrast(50%);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-      } 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Card Compendium</title>
+    <script src="js/navigation.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+     /* Styles for card compendium page */
+     body::before {
+       content: "";
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       z-index: -1;
+       background-image: url("images/compendium-background.png");
+       filter: brightness(25%) contrast(50%);
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center center;
+     } 
 
-      .inner-nav {
-	      display: flex;
-	      flex-direction: row;
-        justify-content: center;
-      }
+     .inner-nav {
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+     }
 
-      .inner-nav-button {
-        display: inline-block;
-        color: white;
-        font-size: 27px;
-        padding: 5px;
-        margin-right: 10px;
+     .inner-nav-button {
+       display: inline-block;
+       color: white;
+       font-size: 27px;
+       padding: 5px;
+       margin-right: 10px;
+       border-radius: 5px;
+       text-decoration: none;
+     }
+
+     .inner-nav-button:hover {
+       color: blue;
+     }
+
+      .card {
+        width: 350px;
+        height: 520px;
+        background-color: white;
+        border: 2px solid #dddddd;
         border-radius: 5px;
-        text-decoration: none;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin: 20px;
+        float: left;
+        display: flex;
+        flex-direction: column;
       }
 
-      .inner-nav-button:hover {
-        color: blue;
+      .card .card-img {
+        width: 250px;
+        height: 250px;
+        margin-top: 5px;
+        align-self: center;
+        padding-bottom: 10px;
       }
 
-       .card {
-         width: 350px;
-         height: 520px;
-         background-color: white;
-         border: 2px solid #dddddd;
-         border-radius: 5px;
-         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-         margin: 20px;
-         float: left;
-         display: flex;
-         flex-direction: column;
-       }
+      .card h2 {
+        margin: 0 20px;
+        font-size: 16px;
+      }
 
-       .card img {
-         width: 200px;
-         height: 200px;
-         margin-top: 5px;
-         align-self: center;
-       }
+      .card p {
+        margin: 10px 20px;
+      }
 
-       .card h2 {
-         margin: 0 20px;
-         font-size: 16px;
-       }
+      /* Common rarity */
+      .card .common {
+        border-color: #b0b0b0;
+      }
 
-       .card p {
-         margin: 10px 20px;
-       }
+      /* Uncommon rarity */
+      .card .uncommon {
+        border-color: #33cc33;
+      }
 
-       /* Common rarity */
-       .card .common {
-         border-color: #b0b0b0;
-       }
+      /* Rare rarity */
+      .card .rare {
+        border-color: #3333cc;
+      }
 
-       /* Uncommon rarity */
-       .card .uncommon {
-         border-color: #33cc33;
-       }
+      /* Legendary rarity */
+      .card .legendary {
+        border-color: #ffcc00;
+      }
 
-       /* Rare rarity */
-       .card .rare {
-         border-color: #3333cc;
-       }
+      .card .ability {
+        margin-top: 20px;
+      }
 
-       /* Legendary rarity */
-       .card .legendary {
-         border-color: #ffcc00;
-       }
-
-       .card .cost {
-         background-image: url('images/Nature.png');
-       }
-
-       .card .ability {
-         margin-top: 20px;
-       }
-
-       .card .type {
-         text-align: center;
-       }
-
-       .card .attack {
-         background-image: url('images/Attack.png');
-       }
-
-       .card .defense {
-         background-image: url('images/Defense.png');
-       }
-
-       .card .stat {
-        font-size: 27px;
-        line-height: 40px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-size: contain;
-        font-weight: bold;
+      .card .type {
         text-align: center;
+      }
+
+      .card .attack {
+        color: red;
+        background-image: url('images/Attack.png');
+      }
+
+      .card .defense {
+        color: blue;
+        background-image: url('images/Defense.png');
+      }
+
+      .card .stat {
+       text-shadow: 2px 2px 6px black;
+       font-size: 27px;
+       line-height: 40px;
+       margin-top: 5px;
+       font-weight: bold;
+       text-align: center;
+       align-self: flex-start;
+      }
+
+      .card .flavor-text {
+        font-style: italic;
+        font-size: 12px;
         color: black;
-        align-self: flex-start;
-       }
+      }
 
-       .card .flavor-text {
-         font-style: italic;
-         font-size: 12px;
-         color: black;
-       }
+      .name-box {
+       display: flex;
+       flex-direction: row;
+       align-self: center;
+       justify-content: space-between;
+       width: 350px;
+      }
 
-       .name-box {
+      .card .name {
+        display: block;
+        font-size: 27px;
+        font-weight: bold;
+        font-family: "Bodoni MT Black", serif;
+        text-align: center;
+        height: 35px;
+        width: 210px;
+        border: 3px dotted black;
+        border-radius: 5px;
+        align-self: center;
+      }
+
+      .card .location {
+       width: 350px;
+      }
+
+      .left, .right {
+       flex: 1;
+       display: flex;
+       flex-direction: row;
+       padding-left: 5px;
+      }
+
+      .card .stat-box {
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
+        border-radius: 5px;
+        width: 50%;
         align-self: center;
-        justify-content: space-between;
-        width: 350px;
-       }
+        background-color: #f1f1f1;
+        border: 3px dotted black;
+      }
 
-       .card .name {
-         display: block;
-         font-size: 27px;
-         font-weight: bold;
-         font-family: "Bodoni MT Black", serif;
-         text-align: center;
-         height: 35px;
-         width: 210px;
-         border: 3px dotted black;
-         border-radius: 5px;
-         align-self: center;
-       }
+      .card .icon {
+       width: 40px;
+       height: 40px;
+       border-radius: 50%;
+       background-size: contain;
+      }
 
-       .left, .right {
-        flex: 1;
-       }
+      .nature-icon {
+        background-image: url('images/Nature.png');
+      }
 
-       .card .stat-box {
-         display: flex;
-         justify-content: center;
-         border-radius: 5px;
-         width: 50%;
-         align-self: center;
-         background-color: #f1f1f1;
-         border: 3px dotted black;
-       }
+      .wood-icon {
+        background-image: url('images/Wood.png');
+      }
 
-       .card .cost .nature-icon {
-         background-image: url('images/Nature.png');
-       }
+      .fire-icon {
+        background-image: url('images/Fire.png');
+      }
 
-       /* Styles for card colors */
-       .nature {
-         background-color: #8BC34A;
-       }
+      .electric-icon {
+        background-image: url('images/Electric.png');
+      }
 
-       .wood {
-         background-color: #8B4513;
-       }
+      .water-icon {
+        background-image: url('images/Water.png');
+      }
 
-       .fire {
-         background-color: #FF5722;
-       }
+      .air-icon {
+        background-image: url('images/Air.png');
+      }
+      
+      .earth-icon {
+        background-image: url('images/Earth.png');
+      }
 
-       .electric {
-         background-color: #FFEB3B;
-       }
+      .ice-icon {
+        background-image: url('images/Ice.png');
+      }
 
-       .water {
-         background-color: #2196F3;
-       }
+      .light-icon {
+        background-image: url('images/Light.png');
+      }
 
-       .air {
-         background-color: #E1F5FE;
-       }
+      .dark-icon {
+        background-image: url('images/Dark.png');
+      }
 
-       .earth {
-         background-color: #8F9779;
-       }
+      .metal-icon {
+        background-image: url('images/Metal.png');
+      }
 
-       .ice {
-         background-color: #B3E5FC;
-       }
+      /* Styles for card colors */
+      .nature {
+        background-color: #8BC34A;
+      }
 
-       .light {
-         background-color: #FFFFFF;
-       }
+      .wood {
+        background-color: #8B4513;
+      }
 
-       .dark {
-         background-color: #424242;
-       }
+      .fire {
+        background-color: #FF5722;
+      }
 
-       .metal {
-         background-color: #9E9E9E;
-       }
-     </style>
-   </head>
-   <body>
-     <h1>Card Compendium</h1>
+      .electric {
+        background-color: #FFEB3B;
+      }
 
-     <div class="nav">
-      <a href="index.html">Home</a><br>
-      <a href="bio.html">How I made this game</a><br>
-     </div>
+      .water {
+        background-color: #2196F3;
+      }
 
-     <div class="inner-nav">
-      <a id="creatures-link" class="inner-nav-button" href="#" onclick="showDiv('creatures-link', 'creatures')" style="color: gray">Creatures</a>
-      <a id="spells-link" class="inner-nav-button" href="#" onclick="showDiv('spells-link', 'spells')">Spells</a>
-      <a id="locations-link" class="inner-nav-button" href="#" onclick="showDiv('locations-link', 'locations')">Locations</a>
-     </div>
+      .air {
+        background-color: #E1F5FE;
+      }
 
-    <div id="creatures">
-      <div class="card rare nature">
-        <div class="name-box">
-          <div class="left">
-            <div class ="cost stat nature-icon">3</div>
-          </div> 
-          <div class="name">Forest Guardian</div>
-          <div class="right"></div>
-        </div>
-        <img src="images/Forest-Guardian.png" alt="Forest Guardian">
-        <p class="type">Plant/Nature</p>
-        <div class="stat-box">
-          <div class="stat attack">4</div>
-          <div class="stat defense">6</div>
-        </div>
-        <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
-        <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
-      </div>
+      .earth {
+        background-color: #8F9779;
+      }
 
-      <div class="card rare nature">
-        <div class="name-box">
-        <div class="left">
-          <div class ="cost stat nature-icon">3</div>
-        </div> 
-        <div class="name">Forest Guardian</div>
-        <div class="right"></div>
-        </div>
-        <img src="images/Forest-Guardian.png" alt="Forest Guardian">
-        <p class="type">Plant/Nature</p>
-        <div class="stat-box">
-          <div class="stat attack">4</div>
-          <div class="stat defense">6</div>
-        </div>
-        <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
-        <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
-      </div>
+      .ice {
+        background-color: #B3E5FC;
+      }
+
+      .light {
+        background-color: #FFFFFF;
+      }
+
+      .dark {
+        background-color: #424242;
+      }
+
+      .metal {
+        background-color: #9E9E9E;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Card Compendium</h1>
+
+    <div class="nav">
+     <a href="index.html">Home</a><br>
+     <a href="bio.html">How I made this game</a><br>
     </div>
 
-    <div id="locations" style="display: none">locations</div>
+    <div class="inner-nav">
+     <a id="creatures-link" class="inner-nav-button" href="#" onclick="showDiv('creatures-link', 'creatures')" style="color: gray">Creatures</a>
+     <a id="spells-link" class="inner-nav-button" href="#" onclick="showDiv('spells-link', 'spells')">Spells</a>
+     <a id="locations-link" class="inner-nav-button" href="#" onclick="showDiv('locations-link', 'locations')">Locations</a>
+    </div>
 
-    <div id="spells" style="display: none">spells</div>
-   </body>
- </html>
+   <div id="creatures">
+     <div class="card rare nature">
+       <div class="name-box">
+         <div class="left">
+           <div class="stat icon nature-icon">3</div>
+         </div> 
+         <div class="name">Forest Guardian</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/Forest-Guardian.png" alt="Forest Guardian">
+       <div class="type">Plant/Nature</div>
+       <div class="stat-box">
+         <div class="stat icon attack">4</div>
+         <div class="stat icon defense">6</div>
+       </div>
+       <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
+       <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
+     </div>
+   </div>
+
+   <div id="locations" style="display: none">
+     <div class="card common nature">
+         <div class="name-box">
+           <div class="left"></div>
+           <div class="name location">Sunflower Meadow</div>
+           <div class="right"></div>
+         </div>
+         <img class="card-img" src="images/locations/Sunflower-Meadow.png" alt="Sunflower Meadow">
+         <div class ="icon nature-icon" style="align-self: center;"></div>
+         <p class="ability">Generates 1 Nature resource per turn.</p>
+         <p class="flavor-text">&ldquo;Bask in the warm sun and feel your energy replenish.&rdquo;</p>
+     </div>
+
+     <div class="card common fire">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Volcano Peak</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Volcano-Peak.png" alt="Volcano Peak">
+       <div class ="icon fire-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Fire resource per turn.</p>
+       <p class="flavor-text">&ldquo;An active volcano that constantly spews hot molten lava.&rdquo;</p>
+     </div>
+
+     <div class="card common wood">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Ancient Forest</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Ancient-Forest.png" alt="Ancient Forest">
+       <div class ="icon wood-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Wood resource per turn.</p>
+       <p class="flavor-text">&ldquo;Listen to the whispers of the trees.&rdquo;</p>
+     </div>
+
+     <div class="card common electric">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Thunder Plains</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Thunder-Plains.png" alt="Thunder Plains">
+       <div class ="icon electric-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Electric resource per turn.</p>
+       <p class="flavor-text">&ldquo;A vast plain, constantly charged with electricity and lightning.&rdquo;</p>
+     </div>
+
+     <div class="card common water">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Coral Reef</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Coral-Reef.png" alt="Coral Reef">
+       <div class ="icon water-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Water resource per turn.</p>
+       <p class="flavor-text">&ldquo;A colorful and vibrant underwater ecosystem, home to all kinds of aquatic creatures.&rdquo;</p>
+     </div>
+
+     <div class="card common air">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Sky Citadel</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Sky-Citadel.png" alt="Sky Citadel">
+       <div class ="icon air-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Air resource per turn.</p>
+       <p class="flavor-text">&ldquo;A towering castle, built high up in the clouds, where the wind and air currents are strong and constant.&rdquo;</p>
+     </div>
+
+     <div class="card common earth">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Crystal Cavern</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Crystal-Cavern.png" alt="Crystal Cavern">
+       <div class ="icon earth-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Earth resource per turn.</p>
+       <p class="flavor-text">&ldquo;A mysterious underground cave filled with beautiful crystals.&rdquo;</p>
+     </div>
+
+     <div class="card common ice">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Frozen Tundra</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Frozen-Tundra.png" alt="Frozen Tundra">
+       <div class ="icon ice-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Ice resource per turn.</p>
+       <p class="flavor-text">&ldquo;A barren, icy wasteland that holds hidden pockets of frozen crystals.&rdquo;</p>
+     </div>
+
+     <div class="card common light">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Temple of Radiance</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Temple-of-Radiance.png" alt="Temple of Radiance">
+       <div class ="icon light-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Light resource per turn.</p>
+       <p class="flavor-text">&ldquo;An ancient temple dedicated to the sun god, whose light fills the surrounding area.&rdquo;</p>
+     </div>
+
+     <div class="card common dark">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Shadowy Grove</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Shadowy-Grove.png" alt="Shadowy Grove">
+       <div class ="icon dark-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Dark resource per turn.</p>
+       <p class="flavor-text">&ldquo;A dense, dark forest where the shadows seem to move on their own.&rdquo;</p>
+     </div>
+
+     <div class="card common metal">
+       <div class="name-box">
+         <div class="left"></div>
+         <div class="name location">Iron Mine</div>
+         <div class="right"></div>
+       </div>
+       <img class="card-img" src="images/locations/Iron-Mine.png" alt="Iron Mine">
+       <div class ="icon metal-icon" style="align-self: center;"></div>
+       <p class="ability">Generates 1 Metal resource per turn.</p>
+       <p class="flavor-text">&ldquo;A deep mine where veins of iron ore can be found and extracted.&rdquo;</p>
+     </div>
+   </div>
+
+   <div id="spells" style="display: none">spells</div>
+  </body>
+</html>
