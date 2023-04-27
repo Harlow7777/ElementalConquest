@@ -1,11 +1,27 @@
 @font-face {
 	font-family: "Bodoni MT Black";
-	src: url("/fonts/BodoniMTBlack.ttf");
+	src: url("fonts/BodoniMTBlack.ttf");
 }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto/Roboto-Black.ttf");
-  src: url("/fonts/Roboto/Roboto-Regular.ttf");
-  src: url("/fonts/Roboto/Roboto-Bold.ttf");
+font-family: "Roboto";
+src: url("fonts/Roboto/Roboto-Black.ttf");
+src: url("fonts/Roboto/Roboto-Regular.ttf");
+src: url("fonts/Roboto/Roboto-Bold.ttf");
+}
+
+h1 {
+	text-align: center;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	padding-left: 100px; 
+	padding-right: 100px; 
+}
+
+.nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
