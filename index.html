@@ -1,234 +1,120 @@
- <!DOCTYPE html>
- <html>
-   <head>
-     <meta charset="UTF-8">
-     <title>Card Compendium</title>
-     <style>
-       /* Styles for card compendium page */
-       body {
-         font-family: 'Roboto', sans-serif;
-         background-color: #f2f2f2;
-       }
-
-       .card {
-         width: 350px;
-         height: 520px;
-         background-color: white;
-         border: 2px solid #dddddd;
-         border-radius: 5px;
-         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-         margin: 20px;
-         float: left;
-         display: flex;
-         flex-direction: column;
-       }
-
-       .card img {
-         width: 200px;
-         height: 200px;
-         margin-top: 5px;
-         align-self: center;
-       }
-
-       h1 {
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Elemental Conquest</title>
+    <style>
+      h1 {
         text-align: center;
-       }
+      }
 
-       .card h2 {
-         margin: 0 20px;
-         font-size: 16px;
-       }
+      h4 {
+        font-weight: normal;
+        text-align: center;
+      }
 
-       .card p {
-         margin: 10px 20px;
-       }
+      body {
+        font-family: 'Roboto', sans-serif;
+        padding-left: 100px; 
+        padding-right: 100px; 
+      }
 
-       /* Common rarity */
-       .card .common {
-         border-color: #b0b0b0;
-       }
-
-       /* Uncommon rarity */
-       .card .uncommon {
-         border-color: #33cc33;
-       }
-
-       /* Rare rarity */
-       .card .rare {
-         border-color: #3333cc;
-       }
-
-       /* Legendary rarity */
-       .card .legendary {
-         border-color: #ffcc00;
-       }
-
-       .card .cost {
-         background-image: url('images/Nature.png');
-       }
-
-       .card .ability {
-         margin-top: 20px;
-       }
-
-       .card .type {
-         text-align: center;
-       }
-
-       .card .attack {
-         background-image: url('images/Attack.png');
-       }
-
-       .card .defense {
-         background-image: url('images/Defense.png');
-       }
-
-       .card .stat {
-        font-size: 27px;
-        line-height: 40px;
+      li {
+        padding-left: 20px;
+      }
+      
+      img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-size: contain;
-        font-weight: bold;
-        text-align: center;
-        color: black;
-        align-self: flex-start;
-       }
+        margin-right: 10px;
+        vertical-align: middle;
+      }
 
-       .card .flavor-text {
-         font-style: italic;
-         font-size: 12px;
-         color: black;
-       }
-
-       .name-box {
+      ul {
+        list-style-type: circle;
+      }
+      
+      .element-list {
+        list-style: none;
         display: flex;
-        flex-direction: row;
-        align-self: center;
-        justify-content: space-between;
-        width: 350px;
-       }
+        flex-direction: column;
+      }
 
-       .card .name {
-         display: block;
-         font-size: 27px;
-         font-weight: bold;
-         font-family: "Bodoni MT Black", serif;
-         text-align: center;
-         height: 35px;
-         width: 210px;
-         border: 3px dotted black;
-         border-radius: 5px;
-         align-self: center;
-       }
+      .element-list-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Elemental Conquest!</h1>
+    <h4>A fully AI generated card game using ChatGPT and DreamStudio.</h4>
 
-       .left, .right {
-        flex: 1;
-       }
+    <a href="bio.html">How I made this game</a><br>
+    <a href="cards.html">Card Compendium</a>
+    
+    <h2>Game Setup:</h2>
+    <p>Each player starts with 20 HP and a deck of 40 cards. Shuffle the deck and draw 5 cards for the starting hand.</p>
 
-       .card .stat-box {
-         display: flex;
-         justify-content: center;
-         border-radius: 5px;
-         width: 50%;
-         align-self: center;
-         background-color: #f1f1f1;
-         border: 3px dotted black;
-       }
+    <h2>Gameplay:</h2>
+    <p>Players take turns playing cards from their hand. Each turn, you can play one location and one creature or spell.<br>
+    Creatures can attack the opponent or their creatures, while spells have various effects.<br>
+    Locations provide a persistent effect while they are in play.</p>
 
-       .card .cost .nature-icon {
-         background-image: url('images/Nature.png');
-       }
+    <h2>Attacking:</h2>
+    <p>To attack, choose a creature to attack with and choose a target creature or the opponent.<br> 
+    The targeted creature or opponent can choose to block the attack with one of their creatures.<br> 
+    If the attack is unblocked, the target loses HP equal to the attacking creature's attack value.</p>
 
-       /* Styles for card colors */
-       .nature {
-         background-color: #8BC34A;
-       }
+    <h2>Winning:</h2>
+    <p>The game is won when one player's HP is reduced to 0.</p>
 
-       .wood {
-         background-color: #8B4513;
-       }
+    <h2>Additional Rules:</h2>
+    <ul>
+      <li>A creature is removed from the game if its life points reach zero. It is then placed in the discard pile.</li>
+      <li>Players are not allowed to look through their decks unless a card specifically allows them to do so.</li>
+      <li>If a card's effect contradicts the rules in any way, the card takes precedence.</li>
+      <li>A player can only have a maximum of 5 creatures and 5 spells in play at a time.</li>
+      <li>Some cards have special abilities that modify the rules of the game or provide a persistent effect while in play. These abilities are described on the card and take effect immediately when played.</li>
+      <li>If a player has no cards in their deck and no cards in their hand, they lose the game.</li>
+    </ul>
 
-       .fire {
-         background-color: #FF5722;
-       }
-
-       .electric {
-         background-color: #FFEB3B;
-       }
-
-       .water {
-         background-color: #2196F3;
-       }
-
-       .air {
-         background-color: #E1F5FE;
-       }
-
-       .earth {
-         background-color: #8F9779;
-       }
-
-       .ice {
-         background-color: #B3E5FC;
-       }
-
-       .light {
-         background-color: #FFFFFF;
-       }
-
-       .dark {
-         background-color: #424242;
-       }
-
-       .metal {
-         background-color: #9E9E9E;
-       }
-     </style>
-   </head>
-   <body>
-     <h1>Card Compendium</h1>
-
-     <a href="index.html">Home</a><br>
-     <a href="bio.html">How I made this game</a><br>
-
-     <div class="card rare nature">
-       <div class="name-box">
-        <div class="left">
-          <div class ="cost stat nature-icon">3</div>
-        </div> 
-        <div class="name">Forest Guardian</div>
-        <div class="right"></div>
-       </div>
-       <img src="images/Forest-Guardian.png" alt="Forest Guardian">
-       <p class="type">Plant/Nature</p>
-       <div class="stat-box">
-         <div class="stat attack">4</div>
-         <div class="stat defense">6</div>
-       </div>
-       <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
-       <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
-     </div>
-
-     <div class="card rare nature">
-      <div class="name-box">
-       <div class="left">
-         <div class ="cost stat nature-icon">3</div>
-       </div> 
-       <div class="name">Forest Guardian</div>
-       <div class="right"></div>
-      </div>
-      <img src="images/Forest-Guardian.png" alt="Forest Guardian">
-      <p class="type">Plant/Nature</p>
-      <div class="stat-box">
-        <div class="stat attack">4</div>
-        <div class="stat defense">6</div>
-      </div>
-      <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
-      <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
-    </div>
-     
-     <!-- Add more cards here... -->
-   </body>
- </html>
+    <p>Have fun playing!</p>
+    
+    <h2>Card Types</h2>
+    <ul>
+      <li>Creature Cards</li>
+      <li>Spell Cards</li>
+      <li>Location Cards</li>
+    </ul>
+    <h2>Creature Types</h2>
+    <ul>
+      <li>Insect</li>
+      <li>Plant</li>
+      <li>Mammal</li>
+      <li>Predator</li>
+      <li>Elemental</li>
+      <li>Spirit</li>
+      <li>Bird</li>
+      <li>Reptile</li>
+      <li>Fish</li>
+      <li>Amphibian</li>
+      <li>Fungus</li>
+      <li>Dinosaur</li>
+      <li>Mythical</li>
+    </ul>
+    <h2>Elemental Subtypes</h2>
+    <ul class="element-list">
+      <li class="element-list-item"><img src="images/Nature.png"> Nature</li>
+      <li class="element-list-item"><img src="images/Fire.png"> Fire</li>
+      <li class="element-list-item"><img src="images/Electric.png"> Electric</li>
+      <li class="element-list-item"><img src="images/Water.png"> Water</li>
+      <li class="element-list-item"><img src="images/Air.png"> Air</li>
+      <li class="element-list-item"><img src="images/Earth.png"> Earth</li>
+      <li class="element-list-item"><img src="images/Ice.png"> Ice</li>
+      <li class="element-list-item"><img src="images/Light.png"> Light</li>
+      <li class="element-list-item"><img src="images/Dark.png"> Dark</li>
+      <li class="element-list-item"><img src="images/Metal.png"> Metal</li>
+      <li class="element-list-item"><img src="images/Wood.png"> Wood</li>
+    </ul>
