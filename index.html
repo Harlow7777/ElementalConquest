@@ -4,9 +4,28 @@
     <title>Elemental Conquest</title>
     <style>
       /* Add styles here */
+      li {
+        padding-left: 20px;
+      }
+      
       img {
-        max-width: 100%;
-        height: auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      
+      .element-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .element-list-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
       }
     </style>
   </head>
@@ -45,6 +64,12 @@
 
     <p>Have fun playing!</p>
     
+    <h2>Card Types</h2>
+    <ul>
+      <li>Creature Cards</li>
+      <li>Spell Cards</li>
+      <li>Location Cards</li>
+    </ul>
     <h2>Creature Types</h2>
     <ul>
       <li>Insect</li>
@@ -61,21 +86,17 @@
       <li>Dinosaur</li>
       <li>Mythical</li>
     </ul>
-    <h2>Creature Subtypes</h2>
-    <ul>
-      <li>Fire</li>
-      <li>Electric</li>
-      <li>Water</li>
-      <li>Earth</li>
-      <li>Ice</li>
-      <li>Light</li>
-      <li>Dark</li>
-      <li>Metal</li>
-      <li>Wood</li>
-    </ul>
-    <h2>Card Types</h2>
-    <ul>
-      <li>Creature Cards</li>
-      <li>Spell Cards</li>
-      <li>Location Cards</li>
+    <h2>Elemental Subtypes</h2>
+    <ul class="element-list">
+      <li class="element-list-item"><img src="images/Nature.png"> Nature</li>
+      <li class="element-list-item"><img src="images/Fire.png"> Fire</li>
+      <li class="element-list-item"><img src="images/Electric.png"> Electric</li>
+      <li class="element-list-item"><img src="images/Water.png"> Water</li>
+      <li class="element-list-item"><img src="images/Air.png"> Air</li>
+      <li class="element-list-item"><img src="images/Earth.png"> Earth</li>
+      <li class="element-list-item"><img src="images/Ice.png"> Ice</li>
+      <li class="element-list-item"><img src="images/Light.png"> Light</li>
+      <li class="element-list-item"><img src="images/Dark.png"> Dark</li>
+      <li class="element-list-item"><img src="images/Metal.png"> Metal</li>
+      <li class="element-list-item"><img src="images/Wood.png"> Wood</li>
     </ul>
