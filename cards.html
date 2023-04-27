@@ -2,13 +2,24 @@
  <html>
    <head>
      <meta charset="UTF-8">
+     <link rel="stylesheet" href="css/styles.css">
      <title>Card Compendium</title>
      <style>
-       /* Styles for card compendium page */
-       body {
-         font-family: 'Roboto', sans-serif;
-         background-color: #f2f2f2;
-       }
+      /* Styles for card compendium page */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("images/compendium-background.png");
+        filter: brightness(25%) contrast(50%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      } 
 
        .card {
          width: 350px;
@@ -28,10 +39,6 @@
          height: 200px;
          margin-top: 5px;
          align-self: center;
-       }
-
-       h1 {
-        text-align: center;
        }
 
        .card h2 {
@@ -190,8 +197,10 @@
    <body>
      <h1>Card Compendium</h1>
 
-     <a href="index.html">Home</a><br>
-     <a href="bio.html">How I made this game</a><br>
+     <div class="nav">
+      <a href="index.html">Home</a><br>
+      <a href="bio.html">How I made this game</a><br>
+     </div>
 
      <div class="card rare nature">
        <div class="name-box">
