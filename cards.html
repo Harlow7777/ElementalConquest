@@ -1,9 +1,9 @@
  <!DOCTYPE html>
  <html>
    <head>
-     <meta charset="UTF-8">
-     <link rel="stylesheet" href="css/styles.css">
      <title>Card Compendium</title>
+     <script src="js/navigation.js"></script>
+     <link rel="stylesheet" href="css/styles.css">
      <style>
       /* Styles for card compendium page */
       body::before {
@@ -20,6 +20,26 @@
         background-repeat: no-repeat;
         background-position: center center;
       } 
+
+      .inner-nav {
+	      display: flex;
+	      flex-direction: row;
+        justify-content: center;
+      }
+
+      .inner-nav-button {
+        display: inline-block;
+        color: white;
+        font-size: 27px;
+        padding: 5px;
+        margin-right: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      .inner-nav-button:hover {
+        color: blue;
+      }
 
        .card {
          width: 350px;
@@ -202,42 +222,52 @@
       <a href="bio.html">How I made this game</a><br>
      </div>
 
-     <div class="card rare nature">
-       <div class="name-box">
+     <div class="inner-nav">
+      <a id="creatures-link" class="inner-nav-button" href="#" onclick="showDiv('creatures-link', 'creatures')" style="color: gray">Creatures</a>
+      <a id="spells-link" class="inner-nav-button" href="#" onclick="showDiv('spells-link', 'spells')">Spells</a>
+      <a id="locations-link" class="inner-nav-button" href="#" onclick="showDiv('locations-link', 'locations')">Locations</a>
+     </div>
+
+    <div id="creatures">
+      <div class="card rare nature">
+        <div class="name-box">
+          <div class="left">
+            <div class ="cost stat nature-icon">3</div>
+          </div> 
+          <div class="name">Forest Guardian</div>
+          <div class="right"></div>
+        </div>
+        <img src="images/Forest-Guardian.png" alt="Forest Guardian">
+        <p class="type">Plant/Nature</p>
+        <div class="stat-box">
+          <div class="stat attack">4</div>
+          <div class="stat defense">6</div>
+        </div>
+        <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
+        <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
+      </div>
+
+      <div class="card rare nature">
+        <div class="name-box">
         <div class="left">
           <div class ="cost stat nature-icon">3</div>
         </div> 
         <div class="name">Forest Guardian</div>
         <div class="right"></div>
-       </div>
-       <img src="images/Forest-Guardian.png" alt="Forest Guardian">
-       <p class="type">Plant/Nature</p>
-       <div class="stat-box">
-         <div class="stat attack">4</div>
-         <div class="stat defense">6</div>
-       </div>
-       <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
-       <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
-     </div>
-
-     <div class="card rare nature">
-      <div class="name-box">
-       <div class="left">
-         <div class ="cost stat nature-icon">3</div>
-       </div> 
-       <div class="name">Forest Guardian</div>
-       <div class="right"></div>
+        </div>
+        <img src="images/Forest-Guardian.png" alt="Forest Guardian">
+        <p class="type">Plant/Nature</p>
+        <div class="stat-box">
+          <div class="stat attack">4</div>
+          <div class="stat defense">6</div>
+        </div>
+        <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
+        <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
       </div>
-      <img src="images/Forest-Guardian.png" alt="Forest Guardian">
-      <p class="type">Plant/Nature</p>
-      <div class="stat-box">
-        <div class="stat attack">4</div>
-        <div class="stat defense">6</div>
-      </div>
-      <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
-      <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
     </div>
-     
-     <!-- Add more cards here... -->
+
+    <div id="locations" style="display: none">locations</div>
+
+    <div id="spells" style="display: none">spells</div>
    </body>
  </html>
