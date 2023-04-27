@@ -1,0 +1,238 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="UTF-8">
+     <title>Card Compendium</title>
+     <style>
+       /* Styles for card compendium page */
+       @font-face {
+        font-family: "Bodoni MT Black";
+        src: url("/fonts/BodoniMTBlack.ttf");
+        }
+      @font-face {
+        font-family: "Roboto";
+        src: url("/fonts/Roboto/Roboto-Black.ttf");
+        src: url("/fonts/Roboto/Roboto-Regular.ttf");
+        src: url("/fonts/Roboto/Roboto-Bold.ttf");
+      }
+
+       body {
+         font-family: 'Roboto', sans-serif;
+         background-color: #f2f2f2;
+       }
+
+       .card {
+         width: 350px;
+         height: 520px;
+         background-color: white;
+         border: 2px solid #dddddd;
+         border-radius: 5px;
+         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+         margin: 20px;
+         float: left;
+         display: flex;
+         flex-direction: column;
+       }
+
+       .card img {
+         width: 200px;
+         height: 200px;
+         margin-top: 5px;
+         align-self: center;
+       }
+
+       .card h2 {
+         margin: 0 20px;
+         font-size: 16px;
+       }
+
+       .card p {
+         margin: 10px 20px;
+       }
+
+       /* Common rarity */
+       .card .common {
+         border-color: #b0b0b0;
+       }
+
+       /* Uncommon rarity */
+       .card .uncommon {
+         border-color: #33cc33;
+       }
+
+       /* Rare rarity */
+       .card .rare {
+         border-color: #3333cc;
+       }
+
+       /* Legendary rarity */
+       .card .legendary {
+         border-color: #ffcc00;
+       }
+
+       .card .cost {
+         background-image: url('images/Nature.png');
+       }
+
+       .card .ability {
+         margin-top: 20px;
+       }
+
+       .card .type {
+         text-align: center;
+       }
+
+       .card .attack {
+         background-image: url('images/Attack.png');
+       }
+
+       .card .defense {
+         background-image: url('images/Defense.png');
+       }
+
+       .card .stat {
+        font-size: 27px;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-size: contain;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+        align-self: flex-start;
+       }
+
+       .card .flavor-text {
+         font-style: italic;
+         font-size: 12px;
+         color: black;
+       }
+
+       .name-box {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        justify-content: space-between;
+        width: 350px;
+       }
+
+       .card .name {
+         display: block;
+         font-size: 27px;
+         font-weight: bold;
+         font-family: "Bodoni MT Black", serif;
+         text-align: center;
+         height: 35px;
+         width: 210px;
+         border: 3px dotted black;
+         border-radius: 5px;
+         align-self: center;
+       }
+
+       .left, .right {
+        flex: 1;
+       }
+
+       .card .stat-box {
+         display: flex;
+         justify-content: center;
+         border-radius: 5px;
+         width: 50%;
+         align-self: center;
+         background-color: #f1f1f1;
+         border: 3px dotted black;
+       }
+
+       .card .cost .nature-icon {
+         background-image: url('images/Nature.png');
+       }
+
+       /* Styles for card colors */
+       .nature {
+         background-color: #8BC34A;
+       }
+
+       .wood {
+         background-color: #8B4513;
+       }
+
+       .fire {
+         background-color: #FF5722;
+       }
+
+       .electric {
+         background-color: #FFEB3B;
+       }
+
+       .water {
+         background-color: #2196F3;
+       }
+
+       .air {
+         background-color: #E1F5FE;
+       }
+
+       .earth {
+         background-color: #8F9779;
+       }
+
+       .ice {
+         background-color: #B3E5FC;
+       }
+
+       .light {
+         background-color: #FFFFFF;
+       }
+
+       .dark {
+         background-color: #424242;
+       }
+
+       .metal {
+         background-color: #9E9E9E;
+       }
+     </style>
+   </head>
+   <body>
+     <h1>Card Compendium</h1>
+
+     <div class="card rare nature">
+       <div class="name-box">
+        <div class="left">
+          <div class ="cost stat nature-icon">3</div>
+        </div> 
+        <div class="name">Forest Guardian</div>
+        <div class="right"></div>
+       </div>
+       <img src="images/Forest-Guardian.png" alt="Forest Guardian">
+       <p class="type">Plant/Nature</p>
+       <div class="stat-box">
+         <div class="stat attack">4</div>
+         <div class="stat defense">6</div>
+       </div>
+       <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
+       <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
+     </div>
+
+     <div class="card rare nature">
+      <div class="name-box">
+       <div class="left">
+         <div class ="cost stat nature-icon">3</div>
+       </div> 
+       <div class="name">Forest Guardian</div>
+       <div class="right"></div>
+      </div>
+      <img src="images/Forest-Guardian.png" alt="Forest Guardian">
+      <p class="type">Plant/Nature</p>
+      <div class="stat-box">
+        <div class="stat attack">4</div>
+        <div class="stat defense">6</div>
+      </div>
+      <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
+      <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
+    </div>
+     
+     <!-- Add more cards here... -->
+   </body>
+ </html>
