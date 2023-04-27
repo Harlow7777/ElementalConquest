@@ -269,170 +269,183 @@
     <h1>Card Compendium</h1>
 
     <div class="nav">
-     <a href="index.html">Home</a><br>
-     <a href="bio.html">How I made this game</a><br>
+      <a href="index.html">Home</a><br>
+      <a href="bio.html">How I made this game</a><br>
     </div>
 
     <div class="inner-nav">
-     <a id="creatures-link" class="inner-nav-button" href="#" onclick="showDiv('creatures-link', 'creatures')" style="color: gray">Creatures</a>
-     <a id="spells-link" class="inner-nav-button" href="#" onclick="showDiv('spells-link', 'spells')">Spells</a>
-     <a id="locations-link" class="inner-nav-button" href="#" onclick="showDiv('locations-link', 'locations')">Locations</a>
+      <a id="creatures-link" class="inner-nav-button" href="#" onclick="showDiv('creatures-link', 'creatures')" style="color: gray">Creatures</a>
+      <a id="spells-link" class="inner-nav-button" href="#" onclick="showDiv('spells-link', 'spells')">Spells</a>
+      <a id="locations-link" class="inner-nav-button" href="#" onclick="showDiv('locations-link', 'locations')">Locations</a>
     </div>
 
-   <div id="creatures">
-     <div class="card rare nature">
-       <div class="name-box">
-         <div class="left">
-           <div class="stat icon nature-icon">3</div>
-         </div> 
-         <div class="name">Forest Guardian</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/creatures/Forest-Guardian.png" alt="Forest Guardian">
-       <div class="type">Plant/Nature</div>
-       <div class="stat-box">
-         <div class="stat icon attack">4</div>
-         <div class="stat icon defense">6</div>
-       </div>
-       <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
-       <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
-     </div>
-   </div>
+    <div id="creatures">
+      <div class="card rare nature">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon nature-icon">3</div>
+          </div> 
+          <div class="name">Forest Guardian</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Forest-Guardian.png" alt="Forest Guardian">
+        <div class="type">Plant/Nature</div>
+        <div class="stat-box">
+          <div class="stat icon attack">4</div>
+          <div class="stat icon defense">6</div>
+        </div>
+        <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
+        <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
+      </div>
+    </div>
 
-   <div id="locations" style="display: none">
-     <div class="card common nature">
-         <div class="name-box">
-           <div class="left"></div>
-           <div class="name location">Sunflower Meadow</div>
-           <div class="right"></div>
-         </div>
-         <img class="card-img" src="images/locations/Sunflower-Meadow.png" alt="Sunflower Meadow">
-         <div class ="icon nature-icon" style="align-self: center;"></div>
-         <p class="ability">Generates 1 Nature resource per turn.</p>
-         <p class="flavor-text">&ldquo;Bask in the warm sun and feel your energy replenish.&rdquo;</p>
-     </div>
+    <div id="locations" style="display: none">
+      <div class="card common nature">
+          <div class="name-box">
+            <div class="left"></div>
+            <div class="name location">Sunflower Meadow</div>
+            <div class="right"></div>
+          </div>
+          <img class="card-img" src="images/locations/Sunflower-Meadow.png" alt="Sunflower Meadow">
+          <div class ="icon nature-icon" style="align-self: center;"></div>
+          <p class="ability">Generates 1 Nature resource per turn.</p>
+          <p class="flavor-text">&ldquo;Bask in the warm sun and feel your energy replenish.&rdquo;</p>
+      </div>
 
-     <div class="card common fire">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Volcano Peak</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Volcano-Peak.png" alt="Volcano Peak">
-       <div class ="icon fire-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Fire resource per turn.</p>
-       <p class="flavor-text">&ldquo;An active volcano that constantly spews hot molten lava.&rdquo;</p>
-     </div>
+      <div class="card common fire">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Volcano Peak</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Volcano-Peak.png" alt="Volcano Peak">
+        <div class ="icon fire-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Fire resource per turn.</p>
+        <p class="flavor-text">&ldquo;An active volcano that constantly spews hot molten lava.&rdquo;</p>
+      </div>
 
-     <div class="card common wood">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Ancient Forest</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Ancient-Forest.png" alt="Ancient Forest">
-       <div class ="icon wood-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Wood resource per turn.</p>
-       <p class="flavor-text">&ldquo;Listen to the whispers of the trees.&rdquo;</p>
-     </div>
+      <div class="card common wood">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Ancient Forest</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Ancient-Forest.png" alt="Ancient Forest">
+        <div class ="icon wood-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Wood resource per turn.</p>
+        <p class="flavor-text">&ldquo;Listen to the whispers of the trees.&rdquo;</p>
+      </div>
 
-     <div class="card common electric">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Thunder Plains</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Thunder-Plains.png" alt="Thunder Plains">
-       <div class ="icon electric-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Electric resource per turn.</p>
-       <p class="flavor-text">&ldquo;A vast plain, constantly charged with electricity and lightning.&rdquo;</p>
-     </div>
+      <div class="card common electric">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Thunder Plains</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Thunder-Plains.png" alt="Thunder Plains">
+        <div class ="icon electric-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Electric resource per turn.</p>
+        <p class="flavor-text">&ldquo;A vast plain, constantly charged with electricity and lightning.&rdquo;</p>
+      </div>
 
-     <div class="card common water">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Coral Reef</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Coral-Reef.png" alt="Coral Reef">
-       <div class ="icon water-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Water resource per turn.</p>
-       <p class="flavor-text">&ldquo;A colorful and vibrant underwater ecosystem, home to all kinds of aquatic creatures.&rdquo;</p>
-     </div>
+      <div class="card common water">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Coral Reef</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Coral-Reef.png" alt="Coral Reef">
+        <div class ="icon water-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Water resource per turn.</p>
+        <p class="flavor-text">&ldquo;A colorful and vibrant underwater ecosystem, home to all kinds of aquatic creatures.&rdquo;</p>
+      </div>
 
-     <div class="card common air">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Sky Citadel</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Sky-Citadel.png" alt="Sky Citadel">
-       <div class ="icon air-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Air resource per turn.</p>
-       <p class="flavor-text">&ldquo;A towering castle, built high up in the clouds, where the wind and air currents are strong and constant.&rdquo;</p>
-     </div>
+      <div class="card common air">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Sky Citadel</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Sky-Citadel.png" alt="Sky Citadel">
+        <div class ="icon air-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Air resource per turn.</p>
+        <p class="flavor-text">&ldquo;A towering castle, built high up in the clouds, where the wind and air currents are strong and constant.&rdquo;</p>
+      </div>
 
-     <div class="card common earth">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Crystal Cavern</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Crystal-Cavern.png" alt="Crystal Cavern">
-       <div class ="icon earth-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Earth resource per turn.</p>
-       <p class="flavor-text">&ldquo;A mysterious underground cave filled with beautiful crystals.&rdquo;</p>
-     </div>
+      <div class="card common earth">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Crystal Cavern</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Crystal-Cavern.png" alt="Crystal Cavern">
+        <div class ="icon earth-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Earth resource per turn.</p>
+        <p class="flavor-text">&ldquo;A mysterious underground cave filled with beautiful crystals.&rdquo;</p>
+      </div>
 
-     <div class="card common ice">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Frozen Tundra</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Frozen-Tundra.png" alt="Frozen Tundra">
-       <div class ="icon ice-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Ice resource per turn.</p>
-       <p class="flavor-text">&ldquo;A barren, icy wasteland that holds hidden pockets of frozen crystals.&rdquo;</p>
-     </div>
+      <div class="card common ice">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Frozen Tundra</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Frozen-Tundra.png" alt="Frozen Tundra">
+        <div class ="icon ice-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Ice resource per turn.</p>
+        <p class="flavor-text">&ldquo;A barren, icy wasteland that holds hidden pockets of frozen crystals.&rdquo;</p>
+      </div>
 
-     <div class="card common light">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Temple of Radiance</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Temple-of-Radiance.png" alt="Temple of Radiance">
-       <div class ="icon light-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Light resource per turn.</p>
-       <p class="flavor-text">&ldquo;An ancient temple dedicated to the sun god, whose light fills the surrounding area.&rdquo;</p>
-     </div>
+      <div class="card common light">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Temple of Radiance</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Temple-of-Radiance.png" alt="Temple of Radiance">
+        <div class ="icon light-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Light resource per turn.</p>
+        <p class="flavor-text">&ldquo;An ancient temple dedicated to the sun god, whose light fills the surrounding area.&rdquo;</p>
+      </div>
 
-     <div class="card common dark">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Shadowy Grove</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Shadowy-Grove.png" alt="Shadowy Grove">
-       <div class ="icon dark-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Dark resource per turn.</p>
-       <p class="flavor-text">&ldquo;A dense, dark forest where the shadows seem to move on their own.&rdquo;</p>
-     </div>
+      <div class="card common dark">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Shadowy Grove</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Shadowy-Grove.png" alt="Shadowy Grove">
+        <div class ="icon dark-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Dark resource per turn.</p>
+        <p class="flavor-text">&ldquo;A dense, dark forest where the shadows seem to move on their own.&rdquo;</p>
+      </div>
 
-     <div class="card common metal">
-       <div class="name-box">
-         <div class="left"></div>
-         <div class="name location">Iron Mine</div>
-         <div class="right"></div>
-       </div>
-       <img class="card-img" src="images/locations/Iron-Mine.png" alt="Iron Mine">
-       <div class ="icon metal-icon" style="align-self: center;"></div>
-       <p class="ability">Generates 1 Metal resource per turn.</p>
-       <p class="flavor-text">&ldquo;A deep mine where veins of iron ore can be found and extracted.&rdquo;</p>
-     </div>
-   </div>
+      <div class="card common metal">
+        <div class="name-box">
+          <div class="left"></div>
+          <div class="name location">Iron Mine</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/locations/Iron-Mine.png" alt="Iron Mine">
+        <div class ="icon metal-icon" style="align-self: center;"></div>
+        <p class="ability">Generates 1 Metal resource per turn.</p>
+        <p class="flavor-text">&ldquo;A deep mine where veins of iron ore can be found and extracted.&rdquo;</p>
+      </div>
+    </div>
 
-   <div id="spells" style="display: none">spells</div>
+    <div id="spells" style="display: none">
+      <div class="card rare nature">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon nature-icon">3</div>
+          </div> 
+          <div class="name">Entangle</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Entangle.png" alt="Entangle">
+        <p class="ability">Roots and vines shoot out from the ground, ensnaring your opponent's creatures and reducing their attack power by 2.</p>
+        <p class="flavor-text">&ldquo;Even the mightiest tree can be brought down by a well-placed vine.&rdquo;</p>
+      </div>
+    </div>
   </body>
 </html>
