@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="css/styles.css">
     <title>Elemental Conquest</title>
     <style>
-      h1 {
-        text-align: center;
-      }
-
       h4 {
         font-weight: normal;
         text-align: center;
-      }
-
-      body {
-        font-family: 'Roboto', sans-serif;
-        padding-left: 100px; 
-        padding-right: 100px; 
       }
 
       li {
@@ -45,14 +36,31 @@
         align-items: center;
         padding: 10px;
       }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("images/background.png");
+        filter: brightness(25%) contrast(50%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      } 
     </style>
   </head>
   <body>
     <h1>Welcome to Elemental Conquest!</h1>
     <h4>A fully AI generated card game using ChatGPT and DreamStudio.</h4>
 
-    <a href="bio.html">How I made this game</a><br>
-    <a href="cards.html">Card Compendium</a>
+    <div class="nav">
+      <a href="bio.html">How I made this game</a><br>
+      <a href="cards.html">Card Compendium</a>
+    </div>
     
     <h2>Game Setup:</h2>
     <p>Each player starts with 20 HP and a deck of 40 cards. Shuffle the deck and draw 5 cards for the starting hand.</p>
