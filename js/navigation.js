@@ -24,3 +24,22 @@ function showDiv(linkId, divId) {
 	}
 	link.style.color = 'gray';
 }
+
+function showOnly(parent, className) {
+	className = ' ' + className + ' ';
+
+	var img = document.getElementById(className.trim() + "-filter-button-img");
+	img.setAttribute("style","-webkit-filter:brightness(70%)");
+
+	var e = parent.firstChild;
+	while (e != null) {
+		if (e.nodeType == 1) {
+		if ((' ' + e.className + ' ').indexOf(className) > -1)
+			e.style.display = 'flex';
+		else
+			e.style.display = 'none';
+		}
+
+		e = e.nextSibling;
+	}
+}

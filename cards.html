@@ -41,6 +41,26 @@
        color: blue;
      }
 
+     .filter {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: 40px;
+     }
+
+     .filter-button-img {
+      -webkit-filter: brightness(100%);
+     }
+
+     .filter-button-img:hover {
+      -webkit-filter: brightness(70%);
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+      transition: all 1s ease;
+     }
+
       .card {
         width: 350px;
         height: 520px;
@@ -131,13 +151,12 @@
        flex-direction: row;
        align-self: center;
        justify-content: space-between;
-       width: 350px;
+       width: 99%;
        border: 3px dotted black;
        border-radius: 5px;
        align-self: center;
        align-items: center;
        justify-items: center;
-       width: 99%;
        background-color: rgba(0, 0, 0, 0.5);
       }
 
@@ -159,7 +178,6 @@
         font-family: "Bodoni MT Black", serif;
         text-align: center;
         height: 35px;
-        width: 210px;
       }
 
       .card .location {
@@ -185,6 +203,14 @@
       }
 
       .card .icon {
+       width: 40px;
+       height: 40px;
+       border-radius: 50%;
+       background-size: contain;
+       margin-top: 10px;
+      }
+
+      .icon {
        width: 40px;
        height: 40px;
        border-radius: 50%;
@@ -300,25 +326,239 @@
       <a id="locations-link" class="inner-nav-button" href="#" onclick="showDiv('locations-link', 'locations')">Locations</a>
     </div>
 
+    <div class="filter">
+      <a id="nature-filter" class="filter-button" href="#" onclick="showOnly(document.getElementById('creatures'), 'nature')">      
+        <div id="nature-filter-button-img" class="icon nature-icon filter-button-img"></div>
+      </a>
+    </div>
+
     <div id="creatures">
       <div class="card rare nature">
         <div class="name-box">
           <div class="left">
             <div class="stat icon nature-icon">3</div>
-          </div> 
+          </div>
           <div class="name">Forest Guardian</div>
           <div class="right"></div>
         </div>
         <img class="card-img" src="images/creatures/Forest-Guardian.png" alt="Forest Guardian">
         <div class="text-box">
-          <div class="type">Plant/Nature</div>
+          <div class="type">plant/nature</div>
           <div class="stat-box">
             <div class="stat icon attack">4</div>
             <div class="stat icon defense">6</div>
           </div>
-        
           <p class="ability">When this creature is summoned, all other Plant creatures on your side of the field gain +1 Defense.</p>
-          <p class="flavor-text">&ldquo;I am the guardian of the forest, and I will not let you harm it.&rdquo;</p>
+          <p class="flavor-text">&ldquo;"I am the guardian of the forest, and I will not let you harm it."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare wood">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon wood-icon">4</div>
+          </div>
+          <div class="name">Thorny Ent</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Thorny-Ent.png" alt="Thorny Ent">
+        <div class="text-box">
+          <div class="type">plant/wood</div>
+          <div class="stat-box">
+            <div class="stat icon attack">5</div>
+            <div class="stat icon defense">8</div>
+          </div>
+          <p class="ability">Whenever this creature is attacked, the attacking creature takes 1 damage.</p>
+          <p class="flavor-text">&ldquo;"Many have tried to cut me down, but they all end up with splinters."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommon fire">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon fire-icon">2</div>
+          </div>
+          <div class="name">Blaze Vine</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Blaze-Vine.png" alt="Blaze Vine">
+        <div class="text-box">
+          <div class="type">plant/fire</div>
+          <div class="stat-box">
+            <div class="stat icon attack">3</div>
+            <div class="stat icon defense">2</div>
+          </div>
+          <p class="ability">Whenever this creature attacks, it deals an additional 1 damage.</p>
+          <p class="flavor-text">&ldquo;"I may be small, but I can still light you up."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommon electric">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon electric-icon">3</div>
+          </div>
+          <div class="name">Shocking Shrub</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Shocking-Shrub.png" alt="Shocking Shrub">
+        <div class="text-box">
+          <div class="type">plant/electric</div>
+          <div class="stat-box">
+            <div class="stat icon attack">2</div>
+            <div class="stat icon defense">4</div>
+          </div>
+          <p class="ability">Whenever this creature is attacked, the attacking creature takes 1 damage.</p>
+          <p class="flavor-text">&ldquo;"I may be small, but I pack a shock."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card common water">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon water-icon">2</div>
+          </div>
+          <div class="name">Swamp Bloom</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Swamp-Bloom.png" alt="Swamp Bloom">
+        <div class="text-box">
+          <div class="type">plant/water</div>
+          <div class="stat-box">
+            <div class="stat icon attack">1</div>
+            <div class="stat icon defense">3</div>
+          </div>
+          <p class="ability">Whenever this creature is attacked, the attacking creature's Attack is reduced by 1.</p>
+          <p class="flavor-text">&ldquo;"I may be pretty, but I'm also deadly."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card common air">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon air-icon">3</div>
+          </div>
+          <div class="name">Wind Blossom</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Wind-Blossom.png" alt="Wind Blossom">
+        <div class="text-box">
+          <div class="type">plant/air</div>
+          <div class="stat-box">
+            <div class="stat icon attack">2</div>
+            <div class="stat icon defense">2</div>
+          </div>
+          <p class="ability">This creature can only be attacked by other creatures with the Air subtype.</p>
+          <p class="flavor-text">&ldquo;"I'm not grounded, so good luck trying to hit me."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommon earth">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon earth-icon">3</div>
+          </div>
+          <div class="name">Stonevine</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Stonevine.png" alt="Stonevine">
+        <div class="text-box">
+          <div class="type">plant/earth</div>
+          <div class="stat-box">
+            <div class="stat icon attack">2</div>
+            <div class="stat icon defense">4</div>
+          </div>
+          <p class="ability">Whenever this creature is attacked, it deals 1 damage to the attacking creature.</p>
+          <p class="flavor-text">&ldquo;"It may be slow, but once it takes root, nothing can move it."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card legendary earth">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon earth-icon">6</div>
+          </div>
+          <div class="name">Rock Golem</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Rock-Golem.png" alt="Rock Golem">
+        <div class="text-box">
+          <div class="type">?/earth</div>
+          <div class="stat-box">
+            <div class="stat icon attack">7</div>
+            <div class="stat icon defense">9</div>
+          </div>
+          <p class="ability">This creature cannot be targeted by special abilities.</p>
+          <p class="flavor-text">&ldquo;"I am the defender of the earth, and I will not yield."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare ice">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon ice-icon">4</div>
+          </div>
+          <div class="name">Frost Flower</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Frost-Flower.png" alt="Frost Flower">
+        <div class="text-box">
+          <div class="type">plant/ice</div>
+          <div class="stat-box">
+            <div class="stat icon attack">3</div>
+            <div class="stat icon defense">3</div>
+          </div>
+          <p class="ability">Whenever this creature attacks, the defending creature's Attack is reduced by 1.</p>
+          <p class="flavor-text">&ldquo;"I may be fragile, but I can freeze you solid."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare light">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon light-icon">5</div>
+          </div>
+          <div class="name">Radiant Rose</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Radiant-Rose.png" alt="Radiant Rose">
+        <div class="text-box">
+          <div class="type">plant/light</div>
+          <div class="stat-box">
+            <div class="stat icon attack">4</div>
+            <div class="stat icon defense">4</div>
+          </div>
+          <p class="ability">All other Plant creatures on your side of the field gain +1 Attack</p>
+          <p class="flavor-text">&ldquo;"I bring light to even the darkest places."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare dark">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon dark-icon">3</div>
+          </div>
+          <div class="name">Shadow Vine</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Shadow-Vine.png" alt="Shadow Vine">
+        <div class="text-box">
+          <div class="type">plant/dark</div>
+          <div class="stat-box">
+            <div class="stat icon attack">2</div>
+            <div class="stat icon defense">3</div>
+          </div>
+          <p class="ability">Whenever this creature attacks, the defending creature's Defense is reduced by 1.</p>
+          <p class="flavor-text">&ldquo;"You'll never see me coming."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommon metal">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon metal-icon">4</div>
+          </div>
+          <div class="name">Iron Oak</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/creatures/Iron-Oak.png" alt="Iron Oak">
+        <div class="text-box">
+          <div class="type">plant/metal</div>
+          <div class="stat-box">
+            <div class="stat icon attack">4</div>
+            <div class="stat icon defense">6</div>
+          </div>
+          <p class="ability">This creature cannot be targeted by special abilities.</p>
+          <p class="flavor-text">&ldquo;"I am unbreakable."&rdquo;</p>
         </div>
       </div>
     </div>
@@ -376,7 +616,7 @@
         <div class="text-box">
           <div class ="icon electric-icon" style="align-self: center;"></div>
           <p class="ability">Generates 1 Electric resource per turn.</p>
-          <p class="flavor-text">&ldquo;A vast plain, constantly charged with electricity and lightning.&rdquo;</p>\
+          <p class="flavor-text">&ldquo;A vast plain, constantly charged with electricity and lightning.&rdquo;</p>
         </div>
       </div>
 
@@ -484,29 +724,308 @@
         <div class="name-box">
           <div class="left">
             <div class="stat icon nature-icon">3</div>
-          </div> 
+          </div>
           <div class="name">Entangle</div>
           <div class="right"></div>
         </div>
         <img class="card-img" src="images/spells/Entangle.png" alt="Entangle">
         <div class="text-box">
           <p class="ability">Roots and vines shoot out from the ground, ensnaring your opponent's creatures and reducing their attack power by 2.</p>
-          <p class="flavor-text">&ldquo;Even the mightiest tree can be brought down by a well-placed vine.&rdquo;</p>
+          <p class="flavor-text">&ldquo;"Even the mightiest tree can be brought down by a well-placed vine."&rdquo;</p>
         </div>
       </div>
-
       <div class="card uncommon wood">
         <div class="name-box">
           <div class="left">
             <div class="stat icon wood-icon">2</div>
-          </div> 
+          </div>
           <div class="name">Splinter Shot</div>
           <div class="right"></div>
         </div>
         <img class="card-img" src="images/spells/Splinter-Shot.png" alt="Splinter Shot">
         <div class="text-box">
           <p class="ability">Your creature launches a barrage of wooden splinters at the enemy, dealing 3 damage to their creature.</p>
-          <p class="flavor-text">&ldquo;A true woodcrafter knows how to make even the smallest splinter count.&rdquo;</p>
+          <p class="flavor-text">&ldquo;"A true woodcrafter knows how to make even the smallest splinter count."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card common fire">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon fire-icon">1</div>
+          </div>
+          <div class="name">Flame Burst</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Flame-Burst.png" alt="Flame Burst">
+        <div class="text-box">
+          <p class="ability">A burst of flames engulfs your opponent's creature, dealing 2 damage.</p>
+          <p class="flavor-text">&ldquo;"Fire can warm you, or it can burn you. It all depends on how you use it."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare electric">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon electric-icon">4</div>
+          </div>
+          <div class="name">Thunderstorm</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Thunderstorm.png" alt="Thunderstorm">
+        <div class="text-box">
+          <p class="ability">Lightning bolts rain down from the sky, dealing 5 damage to all of your opponent's creatures.</p>
+          <p class="flavor-text">&ldquo;"With great power comes great shock value."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card common water">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon water-icon">2</div>
+          </div>
+          <div class="name">Aquatic Barrier</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Aquatic-Barrier.png" alt="Aquatic Barrier">
+        <div class="text-box">
+          <p class="ability">Give all of your water creatures +2 defense for this turn.</p>
+          <p class="flavor-text">&ldquo;"The mighty ocean will protect us from harm."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare air">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon air-icon">4</div>
+          </div>
+          <div class="name">Cyclone</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Cyclone.png" alt="Cyclone">
+        <div class="text-box">
+          <p class="ability">A whirlwind sweeps up your opponent's creatures and tosses them around, dealing 3 damage to each of them.</p>
+          <p class="flavor-text">&ldquo;"The winds of change are blowing in your favor."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card common earth">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon earth-icon">2</div>
+          </div>
+          <div class="name">Rockslide</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Rockslide.png" alt="Rockslide">
+        <div class="text-box">
+          <p class="ability">Rocks and boulders rain down on your opponent's creature, dealing 4 damage.</p>
+          <p class="flavor-text">&ldquo;"Sticks and stones may break your bones, but rocks will definitely hurt you."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommon ice">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon ice-icon">2</div>
+          </div>
+          <div class="name">Snowball</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Snowball.png" alt="Snowball">
+        <div class="text-box">
+          <p class="ability">You hurl a giant snowball at your opponent's creature, dealing 3 damage and freezing it for 1 turn.(unable to attack or use special abilities)</p>
+          <p class="flavor-text">&ldquo;"When life gives you snow, make snowballs."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare light">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon light-icon">3</div>
+          </div>
+          <div class="name">Radiant Blessing</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Radiant-Blessing.png" alt="Radiant Blessing">
+        <div class="text-box">
+          <p class="ability">Heal all friendly creatures for 2 health points.</p>
+          <p class="flavor-text">&ldquo;"May the light of the divine bring us hope and healing."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare dark">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon dark-icon">3</div>
+          </div>
+          <div class="name">Shadow Step</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Shadow-Step.png" alt="Shadow Step">
+        <div class="text-box">
+          <p class="ability">Your creature vanishes into the shadows and reappears behind your opponent's creature, dealing 4 damage.</p>
+          <p class="flavor-text">&ldquo;"The darkness hides many secrets, and even more surprises."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommom metal">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon metal-icon">2</div>
+          </div>
+          <div class="name">Shatter</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Shatter.png" alt="Shatter">
+        <div class="text-box">
+          <p class="ability">Your creature slams into your opponent's creature with incredible force, dealing 2 damage.</p>
+          <p class="flavor-text">&ldquo;"Sometimes the strongest defense is a good offense."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card common nature">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon nature-icon">2</div>
+          </div>
+          <div class="name">Verdant Growth</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Verdant-Growth.png" alt="Verdant Growth">
+        <div class="text-box">
+          <p class="ability">All Plant creatures on your side of the field gain +1 Defense.</p>
+          <p class="flavor-text">&ldquo;"The forest comes alive, the leaves rustling in joy as the plants grow taller and stronger."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommon wood">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon wood-icon">3</div>
+          </div>
+          <div class="name">Timber Totem</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Timber-Totem.png" alt="Timber Totem">
+        <div class="text-box">
+          <p class="ability">Whenever a Wood creature enters the field under your control, it gains +1 Attack.</p>
+          <p class="flavor-text">&ldquo;"The wood whispers a word of power, and the totem comes to life, imbued with ancient magic."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare fire">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon fire-icon">6</div>
+          </div>
+          <div class="name">Burning Embers</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Burning-Embers.png" alt="Burning Embers">
+        <div class="text-box">
+          <p class="ability">At the end of each turn, deal 1 damage to each creature and player.</p>
+          <p class="flavor-text">&ldquo;"Amidst the smoke and flames, nothing remains unscathed."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare electric">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon electric-icon">5</div>
+          </div>
+          <div class="name">Shocking Aura</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Shocking-Aura.png" alt="Shocking Aura">
+        <div class="text-box">
+          <p class="ability">Whenever an opposing creature attacks you or a creature you control, it takes 1 damage.</p>
+          <p class="flavor-text">&ldquo;"The air crackles with electricity, a warning to any who dare challenge the wielder."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommon water">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon water-icon">3</div>
+          </div>
+          <div class="name">Aquatic Sanctuary</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Aquatic-Sanctuary.png" alt="Aquatic Sanctuary">
+        <div class="text-box">
+          <p class="ability">All Water creatures on your side of the field gain +1 Defense.</p>
+          <p class="flavor-text">&ldquo;"The ocean is a harsh mistress, but within the sanctuary, life flourishes."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card common air">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon air-icon">2</div>
+          </div>
+          <div class="name">Whirlwind</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Whirlwind.png" alt="Whirlwind">
+        <div class="text-box">
+          <p class="ability">All Air creatures on your side of the field gain Flying.(Can't be blocked except by other creatures with Flying)</p>
+          <p class="flavor-text">&ldquo;"The wind howls, and the creatures take to the skies, riding the gusts to glory."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card common enchantment - nature">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon enchantment - nature-icon">5</div>
+          </div>
+          <div class="name">Buried Treasure</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Buried-Treasure.png" alt="Buried Treasure">
+        <div class="text-box">
+          <p class="ability">When you cast this spell, you may look at the top 5 cards of your deck and put a creature card from among them into your hand. Then, shuffle your deck. Creatures you control gain +1 defense while this enchantment is on the field. If this enchantment is destroyed, you lose 3 life.</p>
+          <p class="flavor-text">&ldquo;"Ancient magic emanates from the soil, revealing secrets long forgotten."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare ice">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon ice-icon">2</div>
+          </div>
+          <div class="name">Permafrost</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Permafrost.png" alt="Permafrost">
+        <div class="text-box">
+          <p class="ability">At the start of your turn, you may freeze target enemy creature until the end of the turn. If you do, that creature cannot attack or use special abilities this turn.</p>
+          <p class="flavor-text">&ldquo;"Forzen in place, the creature struggles to break free from its icy prison."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card legendary light">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon light-icon">8</div>
+          </div>
+          <div class="name">Divine Intervention</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Divine-Intervention.png" alt="Divine Intervention">
+        <div class="text-box">
+          <p class="ability">At the beginning of your turn, gain 1 life for each creature you control.</p>
+          <p class="flavor-text">&ldquo;"The heavens part, and a divine light shines upon the chose ones, empowering them with life."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card rare dark">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon dark-icon">5</div>
+          </div>
+          <div class="name">Shadow Realm</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Shadow-Realm.png" alt="Shadow Realm">
+        <div class="text-box">
+          <p class="ability">All non-Dark creatures lose Flying and gain -1 Attack.</p>
+          <p class="flavor-text">&ldquo;"The darkness consumes all, leaving only the shadows to haunt the field."&rdquo;</p>
+        </div>
+      </div>
+      <div class="card uncommon metal">
+        <div class="name-box">
+          <div class="left">
+            <div class="stat icon metal-icon">3</div>
+          </div>
+          <div class="name">Iron Fortress</div>
+          <div class="right"></div>
+        </div>
+        <img class="card-img" src="images/spells/Iron-Fortress.png" alt="Iron Fortress">
+        <div class="text-box">
+          <p class="ability">All Metal creatures on your side of the field gain +1 Defense.</p>
+          <p class="flavor-text">&ldquo;"The metal creatures stand tall and proud, guarding their territory with impenetrable strength."&rdquo;</p>
         </div>
       </div>
     </div>
